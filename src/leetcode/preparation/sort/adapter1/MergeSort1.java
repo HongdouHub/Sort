@@ -1,31 +1,26 @@
-package leetcode.preparation.sort;
+package leetcode.preparation.sort.adapter1;
 
-import utils.GsonUtil;
-
-import java.util.Arrays;
-
-/**
- * 归并排序
- */
-public class MergeSort {
+public class MergeSort1 {
 
     public static int[] sort(int[] input) {
+
         int length;
         if (input == null || (length = input.length) == 0) {
             return new int[0];
         }
 
-        int[] temp = new int[length];
-        mergeSort(input, temp, 0, 0, length - 1);
+        mergeSort(input, new int[input.length], 0, 0, length - 1);
         return input;
     }
 
     private static void mergeSort(int[] input, int[] output, int i, int start, int end) {
+
         if (start == end) {
             if ((i & 1) == 1) {
                 output[start] = input[start];
             }
         } else {
+
             int middle = (start + end) >> 1;
 
             mergeSort(input, output, i + 1, start, middle);
@@ -39,11 +34,14 @@ public class MergeSort {
         }
     }
 
+    /**
+     * 数据从input 排序后 拷贝到 output
+     */
     private static void merge(int[] input, int[] output, int start, int middle, int end) {
         int index, j;
 
-        for (index = start, j = middle + 1; start <= middle && j <= end ; index++) {
-            output[index] = input[start] <= input[j] ? input[start++] : input[j++];
+        for (index = start, j = middle + 1; start <= middle && j <= end;) {
+            output[index++] = input[start] <= input[j] ? input[start++] : input[j++];
         }
 
         while (start <= middle) {
@@ -54,6 +52,5 @@ public class MergeSort {
             output[index++] = input[j++];
         }
     }
-
 
 }
