@@ -1,7 +1,15 @@
-package leetcode.preparation.sort;
+package leetcode.preparation.sort.adapter;
 
 /**
- * 选择排序
+ * 简单选择排序（选择排序）
+ *
+ * 最佳时间复杂度：O(n log(n))
+ * 平均时间复杂度：O(n (log(n))^2)
+ * 最差时间复杂度：O(n^2)
+ * 空间复杂度：O(1)
+ *
+ * 稳定性：稳定
+ * 复杂性：较复杂
  */
 public class SelectionSort {
 

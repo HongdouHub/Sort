@@ -1,5 +1,9 @@
 package leetcode.preparation.sort;
 
+import leetcode.preparation.sort.adapter.*;
+import leetcode.preparation.sort.adapter1.HeapSort1;
+import leetcode.preparation.sort.adapter1.QuickSort1;
+
 public class SortUtils {
 
     /**
@@ -34,20 +38,41 @@ public class SortUtils {
      * 堆排序
      */
     public static int[] heapSort(int[] input) {
-        return null;
+        return HeapSort1.sort(input);
     }
 
     /**
      * 快速排序
      */
     public static int[] quickSort(int[] input) {
-        return null;
+        return QuickSort1.sort(input);
     }
 
     /**
-     * 时间排序
+     * 希尔排序
      */
-    public static int[] timeSort(int[] input) {
+    public static int[] shellSort(int[] input) {
+        return ShellSort.sort(input);
+    }
+
+    /**
+     * 基数排序
+     */
+    public static int[] radixSort(int[] input) {
+        return RadixSort.sort(input);
+    }
+
+    /**
+     * 计数排序
+     */
+    public static int[] countingSort(int[] input) {
+        return CountingSort.sort(input);
+    }
+
+    /**
+     * 桶排序
+     */
+    public static int[] bucketSort(int[] input) {
         return null;
     }
 
@@ -59,30 +84,9 @@ public class SortUtils {
     }
 
     /**
-     * 希尔排序
+     * 时间排序
      */
-    public static int[] shellSort(int[] input) {
-        return null;
-    }
-
-    /**
-     * 桶排序
-     */
-    public static int[] bucketSort(int[] input) {
-        return null;
-    }
-
-    /**
-     * 基数排序
-     */
-    public static int[] radixSort(int[] input) {
-        return null;
-    }
-
-    /**
-     * 计数排序
-     */
-    public static int[] countingSort(int[] input) {
+    public static int[] timeSort(int[] input) {
         return null;
     }
 
